@@ -11,5 +11,9 @@ class StaticPagesController < ApplicationController
   # Action for the About page
   def about
   end
+
+  # Action for the Contact page
+  def contact
+  end
   
 end

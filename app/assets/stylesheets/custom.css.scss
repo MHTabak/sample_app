@@ -1,0 +1,148 @@
+@import "bootstrap";
+
+/* Changes
+Use built in Sass variables for color and custom color grayMediumLight
+Not sure why the color white did not require an '$' howeve adding
+$ in front of white does not seem to change things.l
+*/
+$grayMediumLight: #eaeaea;
+
+/* Univesally used in all site pages */
+
+/* Not sure what this does, something to do with spacing 
+   Removing and adding it shifts the entire page to the
+   left, then back right.
+*/
+html {
+	overflow-y: scroll;
+}
+
+/* Put 60 pixels at the top of the page to separate it 
+   from the navbar due to the navbar-fixed-top class in
+   the header tag padding will separate main text from
+   the navigation 
+*/
+body {
+	padding-top: 60px;
+}
+
+/* Not sure what this does. Commenting it out
+   Shifted the page to the left again along with
+   shifting the "Sign up now!" button to the left
+*/   
+section {
+	overflow: auto;
+}
+
+
+/* Not sure what this does, commenting it out had the same affect as
+   above
+*/
+textarea {
+	resize: vertical;
+}
+
+/* Associate the center class with the text-align: center property
+   The dot . in .center indicates that the rule styles a class (the # 
+   sign identifies a rule to style a CSS id). The element inside any 
+   tag (such as div) with class center will be centered on the page. This
+   pulled the "Sign up now!" button to center as in home.html.erb it is
+   in a <div> tag with class attribute center.
+*/
+.center {
+	text-align: center;
+}
+
+/* Not sure what this does
+*/
+.center h1 {
+	margin-bottom: 10px;
+}
+
+/* Typography - some custom rules for the appearance of text
+   on all pages
+*/
+
+/* Set the line height of all text with tags <h1> - <h6>
+*/
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+}
+
+/* Set parameters for <h1> text
+*/
+h1 {
+	font-size: 3em;
+	letter-spacing: -2px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+/* Set parameters for <h2>
+*/
+h2 {
+	font-size: 1.7em;
+	letter-spacing: -1px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: normal;
+	color: $grayLight;
+}
+
+/* Set parameters for <h3> tag
+*/
+p {
+	font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+/* header - rules for site's logo which is just the text 'sample App'
+   put in the page header in white letters (appears in  nav bar) This was
+   in blue before and much smaller. Converted using nesting rules from 
+   original listing 5.7. Note #logo corresponds to the 'id: logo' in the
+   _header.html.erb page
+*/
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: lightGreen;
+    text-decoration: none;
+  }
+}
+
+/* Styling for footer, converted via nesting rules from original custom.css.scss
+   lising 5.13
+*/
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+  a {
+    color: $gray;
+    &:hover {
+      color: $grayDarker ;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+
